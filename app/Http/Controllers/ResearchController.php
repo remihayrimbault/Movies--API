@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PokemonsController extends Controller
+class ResearchController extends Controller
 {
-    public function pokemons() {
+    public function research($search) {
 		$curl = curl_init();
 
 		curl_setopt_array($curl, [
-			CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon/?limit=151",
+			CURLOPT_URL => "http://www.omdbapi.com/?apikey=db191226&s=".$search,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => "",
 			CURLOPT_MAXREDIRS => 10,
@@ -29,7 +29,12 @@ class PokemonsController extends Controller
 		if ($err) {
 			echo "cURL Error #:" . $err;
 		} else {
-			echo $response;
+            $response = json_decode($response);
+
+            return view('research', [
+                'Search' => $response
+            ]);
+
 		}
 	}
 
