@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\SpaceXController;
 use App\Http\Controllers\ResearchController;
+use App\Http\Controllers\ResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,6 @@ Route::get('/cars', function() {
    return view('cars');
 });
 
-Route::get('/cars/{id}/', [CarController::class, 'index']);
-Route::get('/add', [CarController::class, 'add']);
+Route::get('/research/{name}', [ResearchController::class, 'research']);
 
-Route::get('/update/{id}', [CarController::class, 'update']);
-
-Route::get('/spacex/roadster', [SpaceXController::class, 'roadster']);
-
-Route::get('/research', [ResearchController::class, 'research']);
-Route::get('/pokemon/{name}', [ResearchController::class, 'pokemon']);
+Route::get('/result/{id}', [ResultController::class, 'result']);

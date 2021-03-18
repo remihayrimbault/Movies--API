@@ -1,5 +1,272 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
-  background: cyan;
-  color: white;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
   font-family: "Nunito";
+  overflow: hidden;
+}
+body header {
+  height: 10vh;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+body header h1 {
+  display: block;
+  font-size: 35px;
+  margin-top: 4%;
+  color: black;
+  text-shadow: 0px 0px 28px rgba(0, 0, 0, 0.6);
+}
+body h2 {
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+body .transition {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: dimgrey;
+  transform: translateX(0) translateY(0) scale(1.5) rotateX(-45deg);
+  transition: all 2s ease-in-out;
+}
+body .background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(7px);
+  opacity: 0.3;
+  -webkit-filter: blur(7px);
+}
+body .try_again {
+  margin: 10% auto 0;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+}
+body .try_again a {
+  padding: 1%;
+  background: none;
+  border-radius: 30px;
+  border: 1px solid black;
+  cursor: pointer;
+  text-align: center;
+  margin: 10% auto 0;
+  color: black;
+  text-shadow: 0px 0px 28px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  transition-duration: 1s;
+}
+body .try_again a:hover {
+  transition-duration: 1s;
+  background: dimgrey;
+  color: white;
+  border: none;
+}
+body .input {
+  position: relative;
+  width: 100%;
+}
+body .input input#search_bar {
+  outline: none;
+  margin: 10% auto 0;
+  display: block;
+  width: 70%;
+  padding: 2%;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: none;
+  color: black;
+  box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+}
+body .back_button {
+  padding: 1%;
+  background: none;
+  border-radius: 30px;
+  border: 1px solid black;
+  cursor: pointer;
+  float: left;
+  text-align: center;
+  margin-top: 0;
+  margin-left: 2%;
+  color: black;
+  text-shadow: 0px 0px 28px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  transition-duration: 1s;
+}
+body .back_button:hover {
+  transition-duration: 1s;
+  background: dimgrey;
+  color: white;
+  border: none;
+}
+body .parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  margin: 6% auto 0;
+}
+body .parent img {
+  transition: 1s all ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60%;
+  display: block;
+  margin: auto;
+  box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 28px 1px rgba(0, 0, 0, 0.23);
+}
+body .div1 {
+  grid-area: 1/1/2/2;
+}
+body .div2 {
+  grid-area: 1/2/2/3;
+}
+body .div3 {
+  grid-area: 1/3/2/4;
+}
+body .div4 {
+  grid-area: 1/4/2/5;
+}
+body .div5 {
+  grid-area: 1/5/2/6;
+}
+body .div6 {
+  grid-area: 2/1/3/2;
+}
+body .div7 {
+  grid-area: 2/2/3/3;
+}
+body .div8 {
+  grid-area: 2/3/3/4;
+}
+body .div9 {
+  grid-area: 2/4/3/5;
+}
+body .div10 {
+  grid-area: 2/5/3/6;
+}
+body .content {
+  margin: 2% auto 0;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+body .content .left {
+  width: 50%;
+}
+body .content .left div {
+  display: flex;
+  flex-direction: row;
+  margin: 6% 0;
+}
+body .content .left div img {
+  width: 10%;
+  height: 10%;
+  display: block;
+  margin: 0;
+}
+body .content .left div p {
+  width: 70%;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+}
+body .content .right {
+  width: 50%;
+}
+body .content .right div {
+  display: flex;
+  flex-direction: row;
+  margin: 6% 0;
+}
+body .content .right div img {
+  width: 10%;
+  height: 10%;
+  display: block;
+  margin: 0;
+}
+body .content .right div p {
+  width: 70%;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+}
+body .content img {
+  display: block;
+  width: 30%;
+}
+body footer {
+  color: black;
+  text-align: center;
+}
+body footer a {
+  color: black;
+  text-decoration: none;
+}
+body footer a:hover {
+  text-decoration: underline;
 }
