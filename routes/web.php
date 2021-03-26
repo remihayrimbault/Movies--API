@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\SpaceXController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\ResultController;
 
@@ -25,9 +23,6 @@ Route::get('', function () {
     return view('home');
 });
 
-Route::get('/cars', function() {
-   return view('cars');
-});
 
 Route::get('/research/{name}', [ResearchController::class, 'research']);
 

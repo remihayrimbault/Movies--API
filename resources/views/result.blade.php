@@ -1,7 +1,11 @@
 @extends('layout.head')
 @section('content')
-    <div class="transition"></div>
-    <div class="background" style="background: top/100% url('{{$Search->Poster}}')"></div>
+    <div class="transition">
+        <img src="{{ asset('images') }}/icons8-clap.gif">
+    </div>
+    <div class="background">
+        <img class="result" src="{{$Search->Poster}}">
+    </div>
     <a class="back_button">Back</a>
     <h2>{{$Search->Title}}</h2>
     <div class="content">
