@@ -1,5 +1,4 @@
-body{
-    background: cyan;
-    color: white;
-    font-family: 'Nunito';
-}
+@import "components/reset";
+
+@import "common/variables";
+@import "components/home";
